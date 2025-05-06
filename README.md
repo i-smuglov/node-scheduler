@@ -86,12 +86,18 @@ node createTimeTrackingTickets.js --limit=5
 
 This will create only the first 5 working days' tickets for the current month. If no limit is specified, the script will create tickets for all working days in the month.
 
+You can also control the dry-run mode using the `--dry-run` parameter (defaults to true):
+
+```bash
+node createTimeTrackingTickets.js --dry-run=false
+```
+
 ### Updating Time Tracking Tickets
 
 To update existing tickets with time tracking and status changes:
 
 ```bash
-node updateTimeTrackingTickets.js
+node updateTimeTrackingTickets.js --dry-run=false
 ```
 
 This will:
@@ -99,6 +105,12 @@ This will:
 2. Update all child tickets for past dates
 3. Add 8-hour worklogs to each ticket
 4. Transition tickets to "Done" status
+
+You can control the dry-run mode using the `--dry-run` parameter (defaults to true):
+
+```bash
+node updateTimeTrackingTickets.js --dry-run=false
+```
 
 ### Checking Permissions
 
@@ -112,8 +124,8 @@ node checkPermissions.js
 
 The application supports the following configuration options:
 
-- `DRY_RUN`: Set to `true` in the script files to test operations without making actual changes
 - `--limit`: Limit the number of child tickets created (e.g., `--limit=5`)
+- `--dry-run`: Control whether the script runs in dry-run mode (e.g., `--dry-run=false`). Defaults to true for safety.
 
 ## Security Notes
 

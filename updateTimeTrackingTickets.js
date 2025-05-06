@@ -4,8 +4,10 @@ require('dotenv').config();
 
 const axios = getAuthenticatedAxios();
 
-// Global dry-run flag
-const DRY_RUN = false;
+// Parse command line arguments
+const args = process.argv.slice(2);
+const dryRunArg = args.find(arg => arg.startsWith('--dry-run='));
+const DRY_RUN = dryRunArg ? dryRunArg.split('=')[1].toLowerCase() === 'true' : true;
 
 /**
  * Get the parent ticket for the current month
