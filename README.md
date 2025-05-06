@@ -33,10 +33,10 @@ npm install
 
 3. Create a `.env` file in the root directory with the following variables:
 ```env
-JIRA_USERNAME="your_jira_username"
+JIRA_USERNAME="username@domain.com"
 JIRA_API_TOKEN="your_jira_api_token"
-JIRA_DOMAIN="your_jira_domain"
-JIRA_PROJECT_KEY="your_project_key"
+JIRA_DOMAIN="domain.atlassian.net"
+JIRA_PROJECT_KEY="PROJ"
 JIRA_ASSIGNEE="your_jira_id"
 ```
 
